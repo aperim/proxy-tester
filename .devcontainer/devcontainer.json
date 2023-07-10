@@ -3,7 +3,7 @@
 {
 	"name": "Node.js & TypeScript",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-18-bookworm",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": true,
@@ -15,24 +15,18 @@
 			"userUid": "automatic",
 			"userGid": "automatic"
 		},
-		"ghcr.io/devcontainers/features/github-cli:1": {
-			"installDirectlyFromGitHubRelease": true,
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers-contrib/features/actions-runner:1": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+			"moby": true,
+			"installDockerBuildx": true,
 			"version": "latest",
-			"dotnetVersion": "latest"
-		},
-		"ghcr.io/devcontainers-contrib/features/gh-cli:1": {
-			"version": "latest"
+			"dockerDashComposeVersion": "v2"
 		},
 		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
 			"plugins": "ssh-agent npm",
 			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
 			"username": "vscode"
 		},
-		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
-		"ghcr.io/flexwie/devcontainer-features/op:1": {}
+		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
